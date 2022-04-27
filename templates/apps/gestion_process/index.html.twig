@@ -1,0 +1,35 @@
+{% extends 'apps/base.html.twig' %}
+
+{% block page_title %}Accueil - {{ page_title | processObjFilter }}{% endblock %}
+{% block title %}Accueil - {{ page_title | processObjFilter }}{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset("plugins/datatables-bs4/css/dataTables.bootstrap4.min.css") }}">
+    <link rel="stylesheet" href="{{ asset('plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('plugins/datatables/jquery.dataTables.min.js') }}" defer></script>
+    <script src="{{ asset('plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}" defer></script>
+    <script src="{{ asset('plugins/datatables-responsive/js/dataTables.responsive.min.js') }}" defer></script>
+    <script src="{{ asset('plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}" defer></script>
+    <script src="{{ asset('plugins/datatables-buttons/js/dataTables.buttons.min.js') }}" defer></script>
+    <script src="{{ asset('plugins/datatables-buttons/js/buttons.bootstrap4.min.js') }}" defer></script>
+    <script src="{{ asset('plugins/jszip/jszip.min.js') }}" defer></script>
+    <script src="{{ asset('plugins/pdfmake/pdfmake.min.js') }}" defer></script>
+    <script src="{{ asset('plugins/pdfmake/vfs_fonts.js') }}" defer></script>
+    <script src="{{ asset('plugins/datatables-buttons/js/buttons.html5.min.js') }}" defer></script>
+    <script src="{{ asset('plugins/datatables-buttons/js/buttons.print.min.js') }}" defer></script>
+    <script src="{{ asset('plugins/datatables-buttons/js/buttons.colVis.min.js') }}" defer></script>
+{% endblock %}
+
+{% block body %}
+    <div id="btnFilters">
+        {{ render(path('_partials_process_stats', {obj: processObj, perms: perms})) }}
+    </div>
+
+    {{ render(path('_partials_process_table', {obj: processObj, perms: perms, status: status})) }}
+{% endblock %}

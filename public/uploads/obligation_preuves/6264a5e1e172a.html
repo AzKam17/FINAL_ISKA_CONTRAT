@@ -1,0 +1,505 @@
+
+<!-- saved from url=(0078)https://www.bibmath.net/dico/index.php?action=affiche&quoi=./g/gausspivot.html -->
+<html lang="fr" <head=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" type="text/css" href="./Méthode du pivot de Gauss_files/cookieconsent.min.css">
+
+ 
+<script src="./Méthode du pivot de Gauss_files/rules-p-vHM_0aMD9D9Th.js" async=""></script><script src="./Méthode du pivot de Gauss_files/quant.js" async="" type="text/javascript"></script><script async="" type="text/javascript" src="./Méthode du pivot de Gauss_files/cmp2.js"></script><script src="./Méthode du pivot de Gauss_files/f.txt" id="google_shimpl"></script><script async="" type="text/javascript" src="./Méthode du pivot de Gauss_files/choice.js"></script><script type="text/javascript" async="true">
+(function() {
+  var host = window.location.hostname;
+  var element = document.createElement('script');
+  var firstScript = document.getElementsByTagName('script')[0];
+  var url = 'https://quantcast.mgr.consensu.org'
+    .concat('/choice/', 'vHM_0aMD9D9Th', '/', host, '/choice.js')
+  var uspTries = 0;
+  var uspTriesLimit = 3;
+  element.async = true;
+  element.type = 'text/javascript';
+  element.src = url;
+
+  firstScript.parentNode.insertBefore(element, firstScript);
+
+  function makeStub() {
+    var TCF_LOCATOR_NAME = '__tcfapiLocator';
+    var queue = [];
+    var win = window;
+    var cmpFrame;
+
+    function addFrame() {
+      var doc = win.document;
+      var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]);
+
+      if (!otherCMP) {
+        if (doc.body) {
+          var iframe = doc.createElement('iframe');
+
+          iframe.style.cssText = 'display:none';
+          iframe.name = TCF_LOCATOR_NAME;
+          doc.body.appendChild(iframe);
+        } else {
+          setTimeout(addFrame, 5);
+        }
+      }
+      return !otherCMP;
+    }
+
+    function tcfAPIHandler() {
+      var gdprApplies;
+      var args = arguments;
+
+      if (!args.length) {
+        return queue;
+      } else if (args[0] === 'setGdprApplies') {
+        if (
+          args.length > 3 &&
+          args[2] === 2 &&
+          typeof args[3] === 'boolean'
+        ) {
+          gdprApplies = args[3];
+          if (typeof args[2] === 'function') {
+            args[2]('set', true);
+          }
+        }
+      } else if (args[0] === 'ping') {
+        var retr = {
+          gdprApplies: gdprApplies,
+          cmpLoaded: false,
+          cmpStatus: 'stub'
+        };
+
+        if (typeof args[2] === 'function') {
+          args[2](retr);
+        }
+      } else {
+        queue.push(args);
+      }
+    }
+
+    function postMessageEventHandler(event) {
+      var msgIsString = typeof event.data === 'string';
+      var json = {};
+
+      try {
+        if (msgIsString) {
+          json = JSON.parse(event.data);
+        } else {
+          json = event.data;
+        }
+      } catch (ignore) {}
+
+      var payload = json.__tcfapiCall;
+
+      if (payload) {
+        window.__tcfapi(
+          payload.command,
+          payload.version,
+          function(retValue, success) {
+            var returnMsg = {
+              __tcfapiReturn: {
+                returnValue: retValue,
+                success: success,
+                callId: payload.callId
+              }
+            };
+            if (msgIsString) {
+              returnMsg = JSON.stringify(returnMsg);
+            }
+            if (event && event.source && event.source.postMessage) {
+              event.source.postMessage(returnMsg, '*');
+            }
+          },
+          payload.parameter
+        );
+      }
+    }
+
+    while (win) {
+      try {
+        if (win.frames[TCF_LOCATOR_NAME]) {
+          cmpFrame = win;
+          break;
+        }
+      } catch (ignore) {}
+
+      if (win === window.top) {
+        break;
+      }
+      win = win.parent;
+    }
+    if (!cmpFrame) {
+      addFrame();
+      win.__tcfapi = tcfAPIHandler;
+      win.addEventListener('message', postMessageEventHandler, false);
+    }
+  };
+
+  makeStub();
+
+  var uspStubFunction = function() {
+    var arg = arguments;
+    if (typeof window.__uspapi !== uspStubFunction) {
+      setTimeout(function() {
+        if (typeof window.__uspapi !== 'undefined') {
+          window.__uspapi.apply(window.__uspapi, arg);
+        }
+      }, 500);
+    }
+  };
+
+  var checkIfUspIsReady = function() {
+    uspTries++;
+    if (window.__uspapi === uspStubFunction && uspTries < uspTriesLimit) {
+      console.warn('USP is not accessible');
+    } else {
+      clearInterval(uspInterval);
+    }
+  };
+
+  if (typeof window.__uspapi === 'undefined') {
+    window.__uspapi = uspStubFunction;
+    var uspInterval = setInterval(checkIfUspIsReady, 6000);
+  }
+})();
+</script>
+
+<meta name="Author" content="Fred Bayart"><meta name="Description" content="Dictionnaire de mathématiques"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Méthode du pivot de Gauss</title><link type="text/css" href="./Méthode du pivot de Gauss_files/bibstyle.css" rel="stylesheet"><script type="text/x-mathjax-config;executed=true">
+MathJax.Hub.Config({  tex2jax: {inlineMath: [ ['$','$'], ['\\(','\\)'] ] }, CommonHTML: {
+scale: 90
+} }); </script><script type="text/javascript" src="./Méthode du pivot de Gauss_files/MathJax.js"></script><script type="text/javascript" src="./Méthode du pivot de Gauss_files/fonctions.js"></script><script async="" src="./Méthode du pivot de Gauss_files/f(1).txt"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-5238512654171693",
+    enable_page_level_ads: true
+  });
+</script><meta http-equiv="origin-trial" content="AxujKG9INjsZ8/gUq8+dTruNvk7RjZQ1oFhhgQbcTJKDnZfbzSTE81wvC2Hzaf3TW4avA76LTZEMdiedF1vIbA4AAABueyJvcmlnaW4iOiJodHRwczovL2ltYXNkay5nb29nbGVhcGlzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2NTI3NzQ0MDAsImlzVGhpcmRQYXJ0eSI6dHJ1ZX0="><meta http-equiv="origin-trial" content="Azuce85ORtSnWe1MZDTv68qpaW3iHyfL9YbLRy0cwcCZwVnePnOmkUJlG8HGikmOwhZU22dElCcfrfX2HhrBPAkAAAB7eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2NTI3NzQ0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A16nvcdeoOAqrJcmjLRpl1I6f3McDD8EfofAYTt/P/H4/AWwB99nxiPp6kA0fXoiZav908Z8etuL16laFPUdfQsAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2NTI3NzQ0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AxBHdr0J44vFBQtZUqX9sjiqf5yWZ/OcHRcRMN3H9TH+t90V/j3ENW6C8+igBZFXMJ7G3Pr8Dd13632aLng42wgAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2NTI3NzQ0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A88BWHFjcawUfKU3lIejLoryXoyjooBXLgWmGh+hNcqMK44cugvsI5YZbNarYvi3roc1fYbHA1AVbhAtuHZflgEAAAB2eyJvcmlnaW4iOiJodHRwczovL2dvb2dsZS5jb206NDQzIiwiZmVhdHVyZSI6IlRydXN0VG9rZW5zIiwiZXhwaXJ5IjoxNjUyNzc0NDAwLCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A8FHS1NmdCwGqD9DwOicnHHY+y27kdWfxKa0YHSGDfv0CSpDKRHTQdQmZVPDUdaFWUsxdgVxlwAd6o+dhJykPA0AAACWeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjQzMTU1MTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlLCJ1c2FnZSI6InN1YnNldCJ9"><meta http-equiv="origin-trial" content="A8zdXi6dr1hwXEUjQrYiyYQGlU3557y5QWDnN0Lwgj9ePt66XMEvNkVWOEOWPd7TP9sBQ25X0Q15Lr1Nn4oGFQkAAACceyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjQzMTU1MTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlLCJ1c2FnZSI6InN1YnNldCJ9"><meta http-equiv="origin-trial" content="A4/Htern2udN9w3yJK9QgWQxQFruxOXsXL7cW60DyCl0EZFGCSme/J33Q/WzF7bBkVvhEWDlcBiUyZaim5CpFQwAAACceyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjQzMTU1MTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlLCJ1c2FnZSI6InN1YnNldCJ9"><meta http-equiv="origin-trial" content="AxujKG9INjsZ8/gUq8+dTruNvk7RjZQ1oFhhgQbcTJKDnZfbzSTE81wvC2Hzaf3TW4avA76LTZEMdiedF1vIbA4AAABueyJvcmlnaW4iOiJodHRwczovL2ltYXNkay5nb29nbGVhcGlzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2NTI3NzQ0MDAsImlzVGhpcmRQYXJ0eSI6dHJ1ZX0="><meta http-equiv="origin-trial" content="Azuce85ORtSnWe1MZDTv68qpaW3iHyfL9YbLRy0cwcCZwVnePnOmkUJlG8HGikmOwhZU22dElCcfrfX2HhrBPAkAAAB7eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2NTI3NzQ0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A16nvcdeoOAqrJcmjLRpl1I6f3McDD8EfofAYTt/P/H4/AWwB99nxiPp6kA0fXoiZav908Z8etuL16laFPUdfQsAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2NTI3NzQ0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AxBHdr0J44vFBQtZUqX9sjiqf5yWZ/OcHRcRMN3H9TH+t90V/j3ENW6C8+igBZFXMJ7G3Pr8Dd13632aLng42wgAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2NTI3NzQ0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A88BWHFjcawUfKU3lIejLoryXoyjooBXLgWmGh+hNcqMK44cugvsI5YZbNarYvi3roc1fYbHA1AVbhAtuHZflgEAAAB2eyJvcmlnaW4iOiJodHRwczovL2dvb2dsZS5jb206NDQzIiwiZmVhdHVyZSI6IlRydXN0VG9rZW5zIiwiZXhwaXJ5IjoxNjUyNzc0NDAwLCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A8FHS1NmdCwGqD9DwOicnHHY+y27kdWfxKa0YHSGDfv0CSpDKRHTQdQmZVPDUdaFWUsxdgVxlwAd6o+dhJykPA0AAACWeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjQzMTU1MTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlLCJ1c2FnZSI6InN1YnNldCJ9"><meta http-equiv="origin-trial" content="A8zdXi6dr1hwXEUjQrYiyYQGlU3557y5QWDnN0Lwgj9ePt66XMEvNkVWOEOWPd7TP9sBQ25X0Q15Lr1Nn4oGFQkAAACceyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjQzMTU1MTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlLCJ1c2FnZSI6InN1YnNldCJ9"><meta http-equiv="origin-trial" content="A4/Htern2udN9w3yJK9QgWQxQFruxOXsXL7cW60DyCl0EZFGCSme/J33Q/WzF7bBkVvhEWDlcBiUyZaim5CpFQwAAACceyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjQzMTU1MTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlLCJ1c2FnZSI6InN1YnNldCJ9"><meta http-equiv="origin-trial" content="AxujKG9INjsZ8/gUq8+dTruNvk7RjZQ1oFhhgQbcTJKDnZfbzSTE81wvC2Hzaf3TW4avA76LTZEMdiedF1vIbA4AAABueyJvcmlnaW4iOiJodHRwczovL2ltYXNkay5nb29nbGVhcGlzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2NTI3NzQ0MDAsImlzVGhpcmRQYXJ0eSI6dHJ1ZX0="><meta http-equiv="origin-trial" content="Azuce85ORtSnWe1MZDTv68qpaW3iHyfL9YbLRy0cwcCZwVnePnOmkUJlG8HGikmOwhZU22dElCcfrfX2HhrBPAkAAAB7eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2NTI3NzQ0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A16nvcdeoOAqrJcmjLRpl1I6f3McDD8EfofAYTt/P/H4/AWwB99nxiPp6kA0fXoiZav908Z8etuL16laFPUdfQsAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2NTI3NzQ0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AxBHdr0J44vFBQtZUqX9sjiqf5yWZ/OcHRcRMN3H9TH+t90V/j3ENW6C8+igBZFXMJ7G3Pr8Dd13632aLng42wgAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2NTI3NzQ0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A88BWHFjcawUfKU3lIejLoryXoyjooBXLgWmGh+hNcqMK44cugvsI5YZbNarYvi3roc1fYbHA1AVbhAtuHZflgEAAAB2eyJvcmlnaW4iOiJodHRwczovL2dvb2dsZS5jb206NDQzIiwiZmVhdHVyZSI6IlRydXN0VG9rZW5zIiwiZXhwaXJ5IjoxNjUyNzc0NDAwLCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A8FHS1NmdCwGqD9DwOicnHHY+y27kdWfxKa0YHSGDfv0CSpDKRHTQdQmZVPDUdaFWUsxdgVxlwAd6o+dhJykPA0AAACWeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjQzMTU1MTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlLCJ1c2FnZSI6InN1YnNldCJ9"><meta http-equiv="origin-trial" content="A8zdXi6dr1hwXEUjQrYiyYQGlU3557y5QWDnN0Lwgj9ePt66XMEvNkVWOEOWPd7TP9sBQ25X0Q15Lr1Nn4oGFQkAAACceyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjQzMTU1MTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlLCJ1c2FnZSI6InN1YnNldCJ9"><meta http-equiv="origin-trial" content="A4/Htern2udN9w3yJK9QgWQxQFruxOXsXL7cW60DyCl0EZFGCSme/J33Q/WzF7bBkVvhEWDlcBiUyZaim5CpFQwAAACceyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjQzMTU1MTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlLCJ1c2FnZSI6InN1YnNldCJ9"><style type="text/css"> .qc-cmp-button.qc-cmp-secondary-button:hover {    background-color: #368bd6 !important;    border-color: transparent !important;  }  .qc-cmp-button.qc-cmp-secondary-button:hover {    color: #ffffff !important;  }  .qc-cmp-button.qc-cmp-secondary-button {    color: #368bd6 !important;  }  .qc-cmp-button.qc-cmp-secondary-button {    background-color: #eee !important;    border-color: transparent !important;  } </style><meta http-equiv="origin-trial" content="AxujKG9INjsZ8/gUq8+dTruNvk7RjZQ1oFhhgQbcTJKDnZfbzSTE81wvC2Hzaf3TW4avA76LTZEMdiedF1vIbA4AAABueyJvcmlnaW4iOiJodHRwczovL2ltYXNkay5nb29nbGVhcGlzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2NTI3NzQ0MDAsImlzVGhpcmRQYXJ0eSI6dHJ1ZX0="><meta http-equiv="origin-trial" content="Azuce85ORtSnWe1MZDTv68qpaW3iHyfL9YbLRy0cwcCZwVnePnOmkUJlG8HGikmOwhZU22dElCcfrfX2HhrBPAkAAAB7eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2NTI3NzQ0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A16nvcdeoOAqrJcmjLRpl1I6f3McDD8EfofAYTt/P/H4/AWwB99nxiPp6kA0fXoiZav908Z8etuL16laFPUdfQsAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2NTI3NzQ0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AxBHdr0J44vFBQtZUqX9sjiqf5yWZ/OcHRcRMN3H9TH+t90V/j3ENW6C8+igBZFXMJ7G3Pr8Dd13632aLng42wgAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2NTI3NzQ0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A88BWHFjcawUfKU3lIejLoryXoyjooBXLgWmGh+hNcqMK44cugvsI5YZbNarYvi3roc1fYbHA1AVbhAtuHZflgEAAAB2eyJvcmlnaW4iOiJodHRwczovL2dvb2dsZS5jb206NDQzIiwiZmVhdHVyZSI6IlRydXN0VG9rZW5zIiwiZXhwaXJ5IjoxNjUyNzc0NDAwLCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A8FHS1NmdCwGqD9DwOicnHHY+y27kdWfxKa0YHSGDfv0CSpDKRHTQdQmZVPDUdaFWUsxdgVxlwAd6o+dhJykPA0AAACWeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjQzMTU1MTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlLCJ1c2FnZSI6InN1YnNldCJ9"><meta http-equiv="origin-trial" content="A8zdXi6dr1hwXEUjQrYiyYQGlU3557y5QWDnN0Lwgj9ePt66XMEvNkVWOEOWPd7TP9sBQ25X0Q15Lr1Nn4oGFQkAAACceyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjQzMTU1MTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlLCJ1c2FnZSI6InN1YnNldCJ9"><meta http-equiv="origin-trial" content="A4/Htern2udN9w3yJK9QgWQxQFruxOXsXL7cW60DyCl0EZFGCSme/J33Q/WzF7bBkVvhEWDlcBiUyZaim5CpFQwAAACceyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjQzMTU1MTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlLCJ1c2FnZSI6InN1YnNldCJ9"><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><script type="text/javascript" id="__tcfapiuiscript" src="./Méthode du pivot de Gauss_files/cmp2ui-fr.js"></script><style qc-data-emotion="css-global" data-s=""></style><style qc-data-emotion="css" data-s=""></style><style type="text/css">.mjx-chtml {display: inline-block; line-height: 0; text-indent: 0; text-align: left; text-transform: none; font-style: normal; font-weight: normal; font-size: 100%; font-size-adjust: none; letter-spacing: normal; word-wrap: normal; word-spacing: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; margin: 0; padding: 1px 0}
+.MJXc-display {display: block; text-align: center; margin: 1em 0; padding: 0}
+.mjx-chtml[tabindex]:focus, body :focus .mjx-chtml[tabindex] {display: inline-table}
+.mjx-full-width {text-align: center; display: table-cell!important; width: 10000em}
+.mjx-math {display: inline-block; border-collapse: separate; border-spacing: 0}
+.mjx-math * {display: inline-block; -webkit-box-sizing: content-box!important; -moz-box-sizing: content-box!important; box-sizing: content-box!important; text-align: left}
+.mjx-numerator {display: block; text-align: center}
+.mjx-denominator {display: block; text-align: center}
+.MJXc-stacked {height: 0; position: relative}
+.MJXc-stacked > * {position: absolute}
+.MJXc-bevelled > * {display: inline-block}
+.mjx-stack {display: inline-block}
+.mjx-op {display: block}
+.mjx-under {display: table-cell}
+.mjx-over {display: block}
+.mjx-over > * {padding-left: 0px!important; padding-right: 0px!important}
+.mjx-under > * {padding-left: 0px!important; padding-right: 0px!important}
+.mjx-stack > .mjx-sup {display: block}
+.mjx-stack > .mjx-sub {display: block}
+.mjx-prestack > .mjx-presup {display: block}
+.mjx-prestack > .mjx-presub {display: block}
+.mjx-delim-h > .mjx-char {display: inline-block}
+.mjx-surd {vertical-align: top}
+.mjx-mphantom * {visibility: hidden}
+.mjx-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 2px 3px; font-style: normal; font-size: 90%}
+.mjx-annotation-xml {line-height: normal}
+.mjx-menclose > svg {fill: none; stroke: currentColor}
+.mjx-mtr {display: table-row}
+.mjx-mlabeledtr {display: table-row}
+.mjx-mtd {display: table-cell; text-align: center}
+.mjx-label {display: table-row}
+.mjx-box {display: inline-block}
+.mjx-block {display: block}
+.mjx-span {display: inline}
+.mjx-char {display: block; white-space: pre}
+.mjx-itable {display: inline-table; width: auto}
+.mjx-row {display: table-row}
+.mjx-cell {display: table-cell}
+.mjx-table {display: table; width: 100%}
+.mjx-line {display: block; height: 0}
+.mjx-strut {width: 0; padding-top: 1em}
+.mjx-vsize {width: 0}
+.MJXc-space1 {margin-left: .167em}
+.MJXc-space2 {margin-left: .222em}
+.MJXc-space3 {margin-left: .278em}
+.mjx-chartest {display: block; visibility: hidden; position: absolute; top: 0; line-height: normal; font-size: 500%}
+.mjx-chartest .mjx-char {display: inline}
+.mjx-chartest .mjx-box {padding-top: 1000px}
+.MJXc-processing {visibility: hidden; position: fixed; width: 0; height: 0; overflow: hidden}
+.MJXc-processed {display: none}
+.mjx-test {display: block; font-style: normal; font-weight: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow: hidden; height: 1px}
+.mjx-ex-box-test {position: absolute; width: 1px; height: 60ex}
+.mjx-line-box-test {display: table!important}
+.mjx-line-box-test span {display: table-cell!important; width: 10000em!important; min-width: 0; max-width: none; padding: 0; border: 0; margin: 0}
+#MathJax_CHTML_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; padding: 3px 4px; z-index: 401; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.mjx-chtml .mjx-noError {line-height: 1.2; vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+.MJXc-TeX-unknown-R {font-family: STIXGeneral,'Cambria Math','Arial Unicode MS',serif; font-style: normal; font-weight: normal}
+.MJXc-TeX-unknown-I {font-family: STIXGeneral,'Cambria Math','Arial Unicode MS',serif; font-style: italic; font-weight: normal}
+.MJXc-TeX-unknown-B {font-family: STIXGeneral,'Cambria Math','Arial Unicode MS',serif; font-style: normal; font-weight: bold}
+.MJXc-TeX-unknown-BI {font-family: STIXGeneral,'Cambria Math','Arial Unicode MS',serif; font-style: italic; font-weight: bold}
+.MJXc-TeX-ams-R {font-family: MJXc-TeX-ams-R,MJXc-TeX-ams-Rw}
+.MJXc-TeX-cal-B {font-family: MJXc-TeX-cal-B,MJXc-TeX-cal-Bx,MJXc-TeX-cal-Bw}
+.MJXc-TeX-frak-R {font-family: MJXc-TeX-frak-R,MJXc-TeX-frak-Rw}
+.MJXc-TeX-frak-B {font-family: MJXc-TeX-frak-B,MJXc-TeX-frak-Bx,MJXc-TeX-frak-Bw}
+.MJXc-TeX-math-BI {font-family: MJXc-TeX-math-BI,MJXc-TeX-math-BIx,MJXc-TeX-math-BIw}
+.MJXc-TeX-sans-R {font-family: MJXc-TeX-sans-R,MJXc-TeX-sans-Rw}
+.MJXc-TeX-sans-B {font-family: MJXc-TeX-sans-B,MJXc-TeX-sans-Bx,MJXc-TeX-sans-Bw}
+.MJXc-TeX-sans-I {font-family: MJXc-TeX-sans-I,MJXc-TeX-sans-Ix,MJXc-TeX-sans-Iw}
+.MJXc-TeX-script-R {font-family: MJXc-TeX-script-R,MJXc-TeX-script-Rw}
+.MJXc-TeX-type-R {font-family: MJXc-TeX-type-R,MJXc-TeX-type-Rw}
+.MJXc-TeX-cal-R {font-family: MJXc-TeX-cal-R,MJXc-TeX-cal-Rw}
+.MJXc-TeX-main-B {font-family: MJXc-TeX-main-B,MJXc-TeX-main-Bx,MJXc-TeX-main-Bw}
+.MJXc-TeX-main-I {font-family: MJXc-TeX-main-I,MJXc-TeX-main-Ix,MJXc-TeX-main-Iw}
+.MJXc-TeX-main-R {font-family: MJXc-TeX-main-R,MJXc-TeX-main-Rw}
+.MJXc-TeX-math-I {font-family: MJXc-TeX-math-I,MJXc-TeX-math-Ix,MJXc-TeX-math-Iw}
+.MJXc-TeX-size1-R {font-family: MJXc-TeX-size1-R,MJXc-TeX-size1-Rw}
+.MJXc-TeX-size2-R {font-family: MJXc-TeX-size2-R,MJXc-TeX-size2-Rw}
+.MJXc-TeX-size3-R {font-family: MJXc-TeX-size3-R,MJXc-TeX-size3-Rw}
+.MJXc-TeX-size4-R {font-family: MJXc-TeX-size4-R,MJXc-TeX-size4-Rw}
+@font-face {font-family: MJXc-TeX-ams-R; src: local('MathJax_AMS'), local('MathJax_AMS-Regular')}
+@font-face {font-family: MJXc-TeX-ams-Rw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_AMS-Regular.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_AMS-Regular.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_AMS-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-cal-B; src: local('MathJax_Caligraphic Bold'), local('MathJax_Caligraphic-Bold')}
+@font-face {font-family: MJXc-TeX-cal-Bx; src: local('MathJax_Caligraphic'); font-weight: bold}
+@font-face {font-family: MJXc-TeX-cal-Bw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_Caligraphic-Bold.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Caligraphic-Bold.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Caligraphic-Bold.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-frak-R; src: local('MathJax_Fraktur'), local('MathJax_Fraktur-Regular')}
+@font-face {font-family: MJXc-TeX-frak-Rw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_Fraktur-Regular.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Fraktur-Regular.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Fraktur-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-frak-B; src: local('MathJax_Fraktur Bold'), local('MathJax_Fraktur-Bold')}
+@font-face {font-family: MJXc-TeX-frak-Bx; src: local('MathJax_Fraktur'); font-weight: bold}
+@font-face {font-family: MJXc-TeX-frak-Bw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_Fraktur-Bold.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Fraktur-Bold.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Fraktur-Bold.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-math-BI; src: local('MathJax_Math BoldItalic'), local('MathJax_Math-BoldItalic')}
+@font-face {font-family: MJXc-TeX-math-BIx; src: local('MathJax_Math'); font-weight: bold; font-style: italic}
+@font-face {font-family: MJXc-TeX-math-BIw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_Math-BoldItalic.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Math-BoldItalic.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Math-BoldItalic.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-sans-R; src: local('MathJax_SansSerif'), local('MathJax_SansSerif-Regular')}
+@font-face {font-family: MJXc-TeX-sans-Rw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_SansSerif-Regular.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_SansSerif-Regular.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_SansSerif-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-sans-B; src: local('MathJax_SansSerif Bold'), local('MathJax_SansSerif-Bold')}
+@font-face {font-family: MJXc-TeX-sans-Bx; src: local('MathJax_SansSerif'); font-weight: bold}
+@font-face {font-family: MJXc-TeX-sans-Bw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_SansSerif-Bold.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_SansSerif-Bold.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_SansSerif-Bold.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-sans-I; src: local('MathJax_SansSerif Italic'), local('MathJax_SansSerif-Italic')}
+@font-face {font-family: MJXc-TeX-sans-Ix; src: local('MathJax_SansSerif'); font-style: italic}
+@font-face {font-family: MJXc-TeX-sans-Iw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_SansSerif-Italic.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_SansSerif-Italic.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_SansSerif-Italic.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-script-R; src: local('MathJax_Script'), local('MathJax_Script-Regular')}
+@font-face {font-family: MJXc-TeX-script-Rw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_Script-Regular.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Script-Regular.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Script-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-type-R; src: local('MathJax_Typewriter'), local('MathJax_Typewriter-Regular')}
+@font-face {font-family: MJXc-TeX-type-Rw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_Typewriter-Regular.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Typewriter-Regular.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Typewriter-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-cal-R; src: local('MathJax_Caligraphic'), local('MathJax_Caligraphic-Regular')}
+@font-face {font-family: MJXc-TeX-cal-Rw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_Caligraphic-Regular.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Caligraphic-Regular.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Caligraphic-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-main-B; src: local('MathJax_Main Bold'), local('MathJax_Main-Bold')}
+@font-face {font-family: MJXc-TeX-main-Bx; src: local('MathJax_Main'); font-weight: bold}
+@font-face {font-family: MJXc-TeX-main-Bw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_Main-Bold.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Main-Bold.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Main-Bold.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-main-I; src: local('MathJax_Main Italic'), local('MathJax_Main-Italic')}
+@font-face {font-family: MJXc-TeX-main-Ix; src: local('MathJax_Main'); font-style: italic}
+@font-face {font-family: MJXc-TeX-main-Iw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_Main-Italic.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Main-Italic.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Main-Italic.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-main-R; src: local('MathJax_Main'), local('MathJax_Main-Regular')}
+@font-face {font-family: MJXc-TeX-main-Rw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_Main-Regular.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Main-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-math-I; src: local('MathJax_Math Italic'), local('MathJax_Math-Italic')}
+@font-face {font-family: MJXc-TeX-math-Ix; src: local('MathJax_Math'); font-style: italic}
+@font-face {font-family: MJXc-TeX-math-Iw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_Math-Italic.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Math-Italic.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Math-Italic.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-size1-R; src: local('MathJax_Size1'), local('MathJax_Size1-Regular')}
+@font-face {font-family: MJXc-TeX-size1-Rw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_Size1-Regular.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Size1-Regular.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Size1-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-size2-R; src: local('MathJax_Size2'), local('MathJax_Size2-Regular')}
+@font-face {font-family: MJXc-TeX-size2-Rw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_Size2-Regular.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Size2-Regular.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Size2-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-size3-R; src: local('MathJax_Size3'), local('MathJax_Size3-Regular')}
+@font-face {font-family: MJXc-TeX-size3-Rw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_Size3-Regular.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Size3-Regular.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Size3-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-size4-R; src: local('MathJax_Size4'), local('MathJax_Size4-Regular')}
+@font-face {font-family: MJXc-TeX-size4-Rw; src /*1*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/eot/MathJax_Size4-Regular.eot'); src /*2*/: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Size4-Regular.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Size4-Regular.otf') format('opentype')}
+</style></head><body class=" desktop chrome landscape"><div class="qc-cmp2-container" id="qc-cmp2-container" data-nosnippet=""><div class="qc-cmp2-main" id="qc-cmp2-main" data-nosnippet=""><div height="839" class="qc-cmp-cleanslate css-5wp5n6"><div id="qc-cmp2-ui" role="dialog" aria-label="qc-cmp2-ui" aria-modal="true" tabindex="0" class="css-10ayfgq"><div class="qc-cmp2-summary-section"><div class="qc-cmp2-consent-info"><div class="qc-cmp2-publisher-logo-container"><figure><h2>Le respect de votre vie privée est notre priorité</h2></figure><div class="qc-cmp2-summary-info "><div>Nos <button mode="link" class="qc-cmp2-link-inline css-pq0k6d" size="large">partenaires</button> et nous-mêmes stockons et/ou accédons à des informations stockées sur un terminal, telles que les cookies, et traitons les données personnelles, telles que les identifiants uniques et les informations standards envoyées par chaque terminal pour diffuser des publicités et du contenu personnalisés, mesurer les performances des publicités et du contenu, obtenir des données d'audience, et développer et améliorer les produits.</div><div>Avec votre permission, nos partenaires et nous-mêmes pouvons utiliser des données de géolocalisation précises et d’identification par analyse du terminal. En cliquant, vous pouvez consentir aux traitements décrits précédemment. Vous pouvez également accéder à des informations plus détaillées et modifier vos préférences avant de consentir ou pour refuser de donner votre consentement. Veuillez noter que certains traitements de vos données personnelles peuvent ne pas nécessiter votre consentement, mais vous avez le droit de vous y opposer.</div><div>Vos préférences ne s'appliqueront qu’à ce site web. Vous pouvez modifier vos préférences à tout moment en revenant sur ce site web ou en consultant notre Politique de confidentialité.</div></div></div></div></div><div class="qc-cmp2-footer qc-cmp2-footer-overlay qc-cmp2-footer-scrolled"><div class="qc-cmp2-summary-buttons"><button mode="secondary" size="large" class=" css-5a47r">PLUS D'OPTIONS</button><button mode="primary" size="large" class=" css-k8o10q">J'ACCEPTE</button></div></div></div></div></div></div><div id="MathJax_Message" style="display: none;"></div>	<div style="display:none"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="mjx-chtml MJXc-display" style="text-align: center;"><span id="MathJax-Element-1-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;block&quot; /&gt;" role="presentation" style="font-size: 107%; text-align: center; position: relative;"><span id="MJXc-Node-1" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-2" class="mjx-mrow"></span></span><span class="MJX_Assistive_MathML MJX_Assistive_MathML_Block" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"></math></span></span></span><script type="math/tex; mode=display" id="MathJax-Element-1">\newcommand{\mtn}{\mathbb{N}}\newcommand{\mtns}{\mathbb{N}^*}\newcommand{\mtz}{\mathbb{Z}}\newcommand{\mtr}{\mathbb{R}}\newcommand{\mtk}{\mathbb{K}}\newcommand{\mtq}{\mathbb{Q}}\newcommand{\mtc}{\mathbb{C}}\newcommand{\mch}{\mathcal{H}}\newcommand{\mcp}{\mathcal{P}}\newcommand{\mcb}{\mathcal{B}}\newcommand{\mcl}{\mathcal{L}}
+\newcommand{\mcm}{\mathcal{M}}\newcommand{\mcc}{\mathcal{C}}
+\newcommand{\mcmn}{\mathcal{M}}\newcommand{\mcmnr}{\mathcal{M}_n(\mtr)}
+\newcommand{\mcmnk}{\mathcal{M}_n(\mtk)}\newcommand{\mcsn}{\mathcal{S}_n}
+\newcommand{\mcs}{\mathcal{S}}\newcommand{\mcd}{\mathcal{D}}
+\newcommand{\mcsns}{\mathcal{S}_n^{++}}\newcommand{\glnk}{GL_n(\mtk)}
+\newcommand{\mnr}{\mathcal{M}_n(\mtr)}\DeclareMathOperator{\ch}{ch}
+\DeclareMathOperator{\sh}{sh}\DeclareMathOperator{\th}{th}
+\DeclareMathOperator{\vect}{vect}\DeclareMathOperator{\card}{card}
+\DeclareMathOperator{\comat}{comat}\DeclareMathOperator{\imv}{Im}
+\DeclareMathOperator{\rang}{rg}\DeclareMathOperator{\Fr}{Fr}
+\DeclareMathOperator{\diam}{diam}\DeclareMathOperator{\supp}{supp}
+\newcommand{\veps}{\varepsilon}\newcommand{\mcu}{\mathcal{U}}
+\newcommand{\mcun}{\mcu_n}\newcommand{\dis}{\displaystyle}
+\newcommand{\croouv}{[\![}\newcommand{\crofer}{]\!]}
+\newcommand{\rab}{\mathcal{R}(a,b)}\newcommand{\pss}[2]{\langle #1,#2\rangle}
+</script></div><header id="bandeau"><div id="bandeaucentre"><span id="bandeaulogo">Bibm@th.net</span><span id="bandeaumilieu"><a href="https://www.youtube.com/channel/UCP-LXgvAe7CMdf_dddUcLmw" alt="Visitez notre chaine YouTube" title="Visiter notre chaine YouTube"><img src="./Méthode du pivot de Gauss_files/youtube.png"></a><a href="https://www.facebook.com/bibmath" alt="Consulter notre page FaceBook" title="Consulter notre page Facebook"><img src="./Méthode du pivot de Gauss_files/fb.png"></a><a href="https://www.bibmath.net/forums/login.php" alt="Consulter mon compte" title="Vous n&#39;êtes pas identifié. Identifiez-vous."><img src="./Méthode du pivot de Gauss_files/moncompte.png"></a></span><div id="bandeaurecherche"><form id="formrech" name="recherche" action="https://www.bibmath.net/recherche.php" method="get"><input name="q" placeholder="Rechercher sur le site..." class="formulairerecherche inputrecherche"><button class="formulairerecherche boutonrecherche" value="" title="Rechercher"> </button></form></div></div></header><header id="bandeaumobile"><div class="sousbandeaumobile"><span class="itembandeaumobile" id="iconeouvremenu"><a href="javascript:ouvremenumobile()"><img src="./Méthode du pivot de Gauss_files/menumobile.png"></a></span><span class="itembandeaumobilefondnoir" id="iconefermemenu"><a href="javascript:fermemenumobile()"><img src="./Méthode du pivot de Gauss_files/deletemobile.png"></a></span><span class="itembandeaumobile">Bibm@th</span></div><div class="sousbandeaumobile"><span class="itembandeaumobile"><a href="https://www.bibmath.net/forums/index.php" title="Accéder au forum du site"><img src="./Méthode du pivot de Gauss_files/forumgrand.png"></a></span><span class="itembandeaumobilesansbordure"><a href="https://www.facebook.com/bibmath" alt="Consulter notre page FaceBook" title="Consulter notre page Facebook"><img src="./Méthode du pivot de Gauss_files/fbmobile.png"></a></span><span class="itembandeaumobilesansbordure"><a href="https://www.bibmath.net/forums/login.php" alt="Consulter mon compte" title="Vous n&#39;êtes pas identifié. Identifiez-vous."><img src="./Méthode du pivot de Gauss_files/moncomptemobile.png"></a></span><span class="itembandeaumobile" id="iconeouvrerecherche"><a href="javascript:ouvrerecherchemobile()"><img src="./Méthode du pivot de Gauss_files/loupemobile.png"></a></span><span class="itembandeaumobilefondnoir" id="iconefermerecherche"><a href="javascript:fermerecherchemobile()"><img src="./Méthode du pivot de Gauss_files/deletemobile.png"></a></span></div></header><div id="recherchemobile"><form id="formrecherchemobile" name="recherche" action="https://www.bibmath.net/recherche.php" method="get"><div class="divinputrecherche"><input name="q" placeholder="Rechercher sur le site..." class="formulairerecherche inputrecherche"></div><div class="divboutonmobile"><button class="formulairerecherche boutonrecherche" value="" title="Rechercher"> </button></div></form></div><div id="menuetsousmenu" class=""><nav id="menuhaut"><div id="menuhautcentre"><section id="listemenuhaut"><span id="menu0" class="item"><a href="https://www.bibmath.net/index.php"><img src="./Méthode du pivot de Gauss_files/maison.png">Accueil</a></span><span id="menu1" class="item"><a href="javascript:affiche_sousmenu(1);"><img src="./Méthode du pivot de Gauss_files/lycee16.png">Lycée</a></span><span id="menu2" class="item"><a href="javascript:affiche_sousmenu(2);"><img src="./Méthode du pivot de Gauss_files/ressources.png">Supérieur</a></span><span id="menu3" class="item"><a href="javascript:affiche_sousmenu(3);"><img src="./Méthode du pivot de Gauss_files/bibliotheques.png">Bibliothèques</a></span><span id="menu4" class="itemselectionne"><a href="javascript:affiche_sousmenu(4);"><img src="./Méthode du pivot de Gauss_files/references.png">Références</a></span><span id="menu5" class="item"><a href="javascript:affiche_sousmenu(5);"><img src="./Méthode du pivot de Gauss_files/themes.png">Thèmes</a></span><span id="menu6" class="item"><a href="https://www.bibmath.net/forums/index.php"><img src="./Méthode du pivot de Gauss_files/forum.png">Forum</a></span></section></div></nav><nav id="sousmenuhaut"><div id="sousmenuhautcentre"><section id="listesousmenuhaut"><div class="sousmenucontenu" id="sousmenu_0" style="display:none"></div><div class="sousmenucontenu" id="sousmenu_1" style="display:none"><span class="sousmenuitem"><a href="https://www.bibmath.net/ressources/index.php?action=affiche&amp;quoi=college/index">Collège</a></span><span class="sousmenuitem"><a href="https://www.bibmath.net/ressources/index.php?action=affiche&amp;quoi=seconde/index">Seconde</a></span></div><div class="sousmenucontenu" id="sousmenu_2" style="display:none"><span class="sousmenuitem"><a href="https://www.bibmath.net/ressources/index.php?action=affiche&amp;quoi=mathsup/index">Math Sup 2020</a></span><span class="sousmenuitem"><a href="https://www.bibmath.net/ressources/index.php?action=affiche&amp;quoi=mpsi/index">Math Sup 2021</a></span><span class="sousmenuitem"><a href="https://www.bibmath.net/ressources/index.php?action=affiche&amp;quoi=mathspe/index">Math Spé</a></span><span class="sousmenuitem"><a href="https://www.bibmath.net/ressources/index.php?action=affiche&amp;quoi=capes/index">Capes</a></span><span class="sousmenuitem"><a href="https://www.bibmath.net/ressources/index.php?action=affiche&amp;quoi=agreginterne/index">Agreg interne</a></span><span class="sousmenuitem"><a href="https://www.bibmath.net/ressources/index.php?action=affiche&amp;quoi=bts/index">BTS</a></span></div><div class="sousmenucontenu" id="sousmenu_3" style="display:none"><span class="sousmenuitem"><a href="https://www.bibmath.net/ressources/index.php?action=affiche&amp;quoi=bde/index">Bibliothèque d'exercices</a></span><span class="sousmenuitem"><a href="https://www.bibmath.net/pbs/index.php">Bibliothèque de problèmes</a></span><span class="sousmenuitem"><a href="https://www.bibmath.net/quizz/index.php">Automatismes</a></span></div><div class="sousmenucontenu" id="sousmenu_4" style="display:flex"><span class="sousmenuitemselectionne"><a href="https://www.bibmath.net/dico/index.php">Dictionnaire</a></span><span class="sousmenuitem"><a href="https://www.bibmath.net/bios/index.php">Biographie de mathématiciens</a></span><span class="sousmenuitem"><a href="https://www.bibmath.net/formulaire/index.php">Formulaire</a></span><span class="sousmenuitem"><a href="https://www.bibmath.net/trans/index.php">Lexique français/anglais</a></span></div><div class="sousmenucontenu" id="sousmenu_5" style="display:none"><span class="sousmenuitem"><a href="https://www.bibmath.net/crypto/index.php">Cryptographie et codes secrets</a></span><span class="sousmenuitem"><a href="https://www.bibmath.net/jeux/index.php">Jeux et énigmes</a></span><span class="sousmenuitem"><a href="https://www.bibmath.net/carres/index.php?action=affiche&amp;quoi=carres">Carrés magiques</a></span><span class="sousmenuitem"><a href="https://www.bibmath.net/quotidien/index.php">Mathématiques au quotidien</a></span><span class="sousmenuitem"><a href="https://www.bibmath.net/dossiers/index.php">Dossiers</a></span></div><div class="sousmenucontenu" id="sousmenu_6" style="display:none"></div></section></div></nav><nav id="menumobile"><div class="itemmenumobile"><div class="teteitemmenumobile"><span><a href="https://www.bibmath.net/index.php">Accueil</a></span><img src="./Méthode du pivot de Gauss_files/flechemenumobileferme.png" id="sousmenumobileimageferme0"><img src="./Méthode du pivot de Gauss_files/flechemenumobileouvert.png" id="sousmenumobileimageouvert0" style="display:none;"></div></div><div class="itemmenumobile"><div class="teteitemmenumobile"><span><a href="javascript:affiche_sousmenumobile(1);">Lycée</a></span><img src="./Méthode du pivot de Gauss_files/flechemenumobileferme.png" id="sousmenumobileimageferme1"><img src="./Méthode du pivot de Gauss_files/flechemenumobileouvert.png" id="sousmenumobileimageouvert1" style="display:none;"></div><div class="sousmenumobile" id="sousmenumobile1"><div class="sousitemmenumobile"><span><a href="https://www.bibmath.net/ressources/index.php?action=affiche&amp;quoi=college/index">Collège</a></span></div><div class="sousitemmenumobile"><span><a href="https://www.bibmath.net/ressources/index.php?action=affiche&amp;quoi=seconde/index">Seconde</a></span></div></div></div><div class="itemmenumobile"><div class="teteitemmenumobile"><span><a href="javascript:affiche_sousmenumobile(2);">Supérieur</a></span><img src="./Méthode du pivot de Gauss_files/flechemenumobileferme.png" id="sousmenumobileimageferme2"><img src="./Méthode du pivot de Gauss_files/flechemenumobileouvert.png" id="sousmenumobileimageouvert2" style="display:none;"></div><div class="sousmenumobile" id="sousmenumobile2"><div class="sousitemmenumobile"><span><a href="https://www.bibmath.net/ressources/index.php?action=affiche&amp;quoi=mathsup/index">Math Sup 2020</a></span></div><div class="sousitemmenumobile"><span><a href="https://www.bibmath.net/ressources/index.php?action=affiche&amp;quoi=mpsi/index">Math Sup 2021</a></span></div><div class="sousitemmenumobile"><span><a href="https://www.bibmath.net/ressources/index.php?action=affiche&amp;quoi=mathspe/index">Math Spé</a></span></div><div class="sousitemmenumobile"><span><a href="https://www.bibmath.net/ressources/index.php?action=affiche&amp;quoi=capes/index">Capes</a></span></div><div class="sousitemmenumobile"><span><a href="https://www.bibmath.net/ressources/index.php?action=affiche&amp;quoi=agreginterne/index">Agreg interne</a></span></div><div class="sousitemmenumobile"><span><a href="https://www.bibmath.net/ressources/index.php?action=affiche&amp;quoi=bts/index">BTS</a></span></div></div></div><div class="itemmenumobile"><div class="teteitemmenumobile"><span><a href="javascript:affiche_sousmenumobile(3);">Bibliothèques</a></span><img src="./Méthode du pivot de Gauss_files/flechemenumobileferme.png" id="sousmenumobileimageferme3"><img src="./Méthode du pivot de Gauss_files/flechemenumobileouvert.png" id="sousmenumobileimageouvert3" style="display:none;"></div><div class="sousmenumobile" id="sousmenumobile3"><div class="sousitemmenumobile"><span><a href="https://www.bibmath.net/ressources/index.php?action=affiche&amp;quoi=bde/index">Bibliothèque d'exercices</a></span></div><div class="sousitemmenumobile"><span><a href="https://www.bibmath.net/pbs/index.php">Bibliothèque de problèmes</a></span></div><div class="sousitemmenumobile"><span><a href="https://www.bibmath.net/quizz/index.php">Automatismes</a></span></div></div></div><div class="itemmenumobileselectionne"><div class="teteitemmenumobile"><span><a href="javascript:affiche_sousmenumobile(4);">Références</a></span><img src="./Méthode du pivot de Gauss_files/flechemenumobileferme.png" id="sousmenumobileimageferme4"><img src="./Méthode du pivot de Gauss_files/flechemenumobileouvert.png" id="sousmenumobileimageouvert4" style="display:none;"></div><div class="sousmenumobile" id="sousmenumobile4"><div class="sousitemmenumobile"><span><a href="https://www.bibmath.net/dico/index.php">Dictionnaire</a></span></div><div class="sousitemmenumobile"><span><a href="https://www.bibmath.net/bios/index.php">Biographie de mathématiciens</a></span></div><div class="sousitemmenumobile"><span><a href="https://www.bibmath.net/formulaire/index.php">Formulaire</a></span></div><div class="sousitemmenumobile"><span><a href="https://www.bibmath.net/trans/index.php">Lexique français/anglais</a></span></div></div></div><div class="itemmenumobile"><div class="teteitemmenumobile"><span><a href="javascript:affiche_sousmenumobile(5);">Thèmes</a></span><img src="./Méthode du pivot de Gauss_files/flechemenumobileferme.png" id="sousmenumobileimageferme5"><img src="./Méthode du pivot de Gauss_files/flechemenumobileouvert.png" id="sousmenumobileimageouvert5" style="display:none;"></div><div class="sousmenumobile" id="sousmenumobile5"><div class="sousitemmenumobile"><span><a href="https://www.bibmath.net/crypto/index.php">Cryptographie et codes secrets</a></span></div><div class="sousitemmenumobile"><span><a href="https://www.bibmath.net/jeux/index.php">Jeux et énigmes</a></span></div><div class="sousitemmenumobile"><span><a href="https://www.bibmath.net/carres/index.php?action=affiche&amp;quoi=carres">Carrés magiques</a></span></div><div class="sousitemmenumobile"><span><a href="https://www.bibmath.net/quotidien/index.php">Mathématiques au quotidien</a></span></div><div class="sousitemmenumobile"><span><a href="https://www.bibmath.net/dossiers/index.php">Dossiers</a></span></div></div></div><div class="itemmenumobile"><div class="teteitemmenumobile"><span><a href="https://www.bibmath.net/forums/index.php">Forum</a></span><img src="./Méthode du pivot de Gauss_files/flechemenumobileferme.png" id="sousmenumobileimageferme6"><img src="./Méthode du pivot de Gauss_files/flechemenumobileouvert.png" id="sousmenumobileimageouvert6" style="display:none;"></div></div></nav></div><iframe name="__tcfapiLocator" style="display: none;" src="./Méthode du pivot de Gauss_files/saved_resource.html"></iframe><div id="main" class=""><div id="maincentre"><div id="gauche"><div id="pubgauche">
+	<script async="" src="./Méthode du pivot de Gauss_files/f(2).txt" crossorigin="anonymous" data-checked-head="true"></script>
+	 <script async="" src="./Méthode du pivot de Gauss_files/f(1).txt"></script>
+<!-- Bibmath -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5238512654171693" data-ad-slot="0076167888" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="border: none; height: 90px; width: 728px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-table;"><ins id="aswift_1_anchor" style="border: none; height: 90px; width: 728px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: block;"></ins></ins></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div><div id="pubresponsive"><script async="" src="./Méthode du pivot de Gauss_files/f(1).txt"></script>
+<!-- bibmathresponsive -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5238512654171693" data-ad-slot="2152023625" data-ad-format="auto" data-full-width-responsive="true" data-adsbygoogle-status="done"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div><article id="contenugauche"><div class="chemin"><a href="https://www.bibmath.net/dico/index.php">Dictionnaire de mathématiques</a> &gt; <a href="https://www.bibmath.net/dico/index.php?action=rub&amp;quoi=200">Algèbre</a> &gt; <a href="https://www.bibmath.net/dico/index.php?action=rub&amp;quoi=206">Algèbre linéaire</a> &gt; <a href="https://www.bibmath.net/dico/index.php?action=rub&amp;quoi=20604">Systèmes linéaires</a> &gt; </div><h1>Méthode du pivot de Gauss</h1><p class="dtexte">La méthode du pivot de Gauss est une méthode pour transformer un système en un autre système équivalent
+(ayant les mêmes solutions) qui est triangulaire et est donc facile à résoudre. Les opérations autorisées pour transformer ce système sont :</p>
+<div class="liste listetexte">
+<ul>
+<li>échange de deux lignes.
+</li><li>multiplication d'une ligne par un nombre non nul.
+</li><li>addition d'un multiple d'une ligne à une autre ligne.
+</li></ul>
+</div>
+<p class="dtexte">Prenons l'exemple suivant :</p>
+<center><img src="./Méthode du pivot de Gauss_files/gausspivot1.png"></center>
+<p class="ntexte">On conserve la ligne L<sub>1</sub>, qui sert de pivot pour éliminer l'inconnue <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-2-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="font-size: 107%; position: relative;"><span id="MJXc-Node-3" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-4" class="mjx-mrow"><span id="MJXc-Node-5" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.215em; padding-bottom: 0.268em;">x</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>x</mi></math></span></span><script type="math/tex" id="MathJax-Element-2">x</script> des autres lignes; pour cela, on retire 
+L<sub>1</sub> à L<sub>2</sub>, et 3 fois L<sub>1</sub> à L<sub>3</sub>. On obtient :</p>
+<center><img src="./Méthode du pivot de Gauss_files/gausspivot2.png"></center>
+<p class="ntexte">On conserve alors la ligne L<sub>2</sub> qui sert de pivot pour éliminer <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-3-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="font-size: 107%; position: relative;"><span id="MJXc-Node-6" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-7" class="mjx-mrow"><span id="MJXc-Node-8" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.215em; padding-bottom: 0.481em; padding-right: 0.006em;">y</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>y</mi></math></span></span><script type="math/tex" id="MathJax-Element-3">y</script> de la troisième ligne; pour cela, on remplace la
+ligne L<sub>3</sub> par L<sub>3</sub>+L<sub>2</sub>. On trouve :</p>
+<center><img src="./Méthode du pivot de Gauss_files/gausspivot3.png"></center>
+<p class="ntexte">Ce dernier système, triangulaire, est facile à résoudre : la dernière ligne donne <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-4-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="font-size: 107%; position: relative;"><span id="MJXc-Node-9" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-10" class="mjx-mrow"><span id="MJXc-Node-11" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.215em; padding-bottom: 0.268em; padding-right: 0.003em;">z</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>z</mi></math></span></span><script type="math/tex" id="MathJax-Element-4">z</script>, en reportant, la deuxième ligne donne <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-5-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="font-size: 107%; position: relative;"><span id="MJXc-Node-12" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-13" class="mjx-mrow"><span id="MJXc-Node-14" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.215em; padding-bottom: 0.481em; padding-right: 0.006em;">y</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>y</mi></math></span></span><script type="math/tex" id="MathJax-Element-5">y</script>, etc...</p>
+<div class="titrepartie">Consulter aussi...</div><div class="liste"><ul><li><a href="https://www.bibmath.net/bios/index.php?action=affiche&amp;quoi=gauss">Biographie de Carl Gauss</a><br></li></ul></div></article></div><aside id="droite"><div class="contenudroite"><h1>
+	Discussions des forums</h1><li><a href="https://www.bibmath.net/forums/viewtopic.php?id=14219&amp;action=new" title="Methode de calcul approximatif de la factorielle d&#39;un nombre">Methode de calcul approxi …</a></li>
+<li><a href="https://www.bibmath.net/forums/viewtopic.php?id=14955&amp;action=new" title="Arithmétique binaire">Arithmétique binaire</a></li>
+<li><a href="https://www.bibmath.net/forums/viewtopic.php?id=14953&amp;action=new" title="Exercice sur un groupe">Exercice sur un groupe</a></li>
+<li><a href="https://www.bibmath.net/forums/viewtopic.php?id=14957&amp;action=new" title="Si N=aaa...aaa, avec n chiffres a, en base b=a+1, comment s&#39;écrit N² ?">Si N=aaa...aaa, avec n ch …</a></li>
+<li><a href="https://www.bibmath.net/forums/viewtopic.php?id=14952&amp;action=new" title="Divisibilité">Divisibilité</a></li>
+<li><a href="https://www.bibmath.net/forums/viewtopic.php?id=14956&amp;action=new" title="DM statistique">DM statistique</a></li>
+<li><a href="https://www.bibmath.net/forums/viewtopic.php?id=14954&amp;action=new" title="Résoudre Laplace dans S&#39;">Résoudre Laplace dans S'</a></li>
+<li><a href="https://www.bibmath.net/forums/viewtopic.php?id=14951&amp;action=new" title="Une somme">Une somme</a></li>
+<li><a href="https://www.bibmath.net/forums/viewtopic.php?id=14904&amp;action=new" title="Équation trigo">Équation trigo</a></li>
+<li><a href="https://www.bibmath.net/forums/viewtopic.php?id=14815&amp;action=new" title="Jolies figures, c&#39;est tout !">Jolies figures, c'est tout !</a></li>
+<li><a href="https://www.bibmath.net/forums/viewtopic.php?id=14949&amp;action=new" title="Limite et domaine de définition">Limite et domaine de défi …</a></li>
+<li><a href="https://www.bibmath.net/forums/viewtopic.php?id=14950&amp;action=new" title="Résolution d&#39;un problème géométrique">Résolution d'un problème …</a></li>
+<li><a href="https://www.bibmath.net/forums/viewtopic.php?id=14878&amp;action=new" title="Théorème de Fermat">Théorème de Fermat</a></li>
+<li><a href="https://www.bibmath.net/forums/viewtopic.php?id=14948&amp;action=new" title="Espace vectoriels">Espace vectoriels</a></li>
+<li><a href="https://www.bibmath.net/forums/viewtopic.php?id=14940&amp;action=new" title="Limite de Un+1">Limite de Un+1</a></li>
+<div class="bascontenu"><a href="https://www.bibmath.net/forums/">Accéder aux forums</a></div>  </div><div id="pubdroite"><ins class="adsbygoogle" style="display:inline-block;width:250px;height:250px" data-ad-client="ca-pub-5238512654171693" data-ad-slot="3610567220" data-adsbygoogle-status="done"><ins id="aswift_2_expand" style="border: none; height: 250px; width: 250px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-table;"><ins id="aswift_2_anchor" style="border: none; height: 250px; width: 250px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: block;"></ins></ins></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div><div class="contenudroite"><h1>Mathématicienne du mois</h1><center><img src="./Méthode du pivot de Gauss_files/lovelacepetit.jpg" class="imgbios"></center>
+<center>
+<a href="https://www.bibmath.net/bios/index.php?action=affiche&amp;quoi=lovelace">Ada Lovelace (1815 - 1852)</a>
+</center><div class="bascontenu"><a href="https://www.bibmath.net/bios/index.php">Toutes les biographies</a></div></div></aside></div></div><ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;"><ins id="aswift_0_expand" style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-table;"><ins id="aswift_0_anchor" style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: block;"></ins></ins></ins><ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;"></ins><footer id="pied"><div id="piedcentre"><section id="listepied"><span class="item"><script language="JavaScript1.1"> <!-- 
+	hsh = new Date();
+      hsd = document;
+      hsi = '<a href="https://www.xiti.com/xiti.asp?s=65164"'
+      hsi += ' TARGET="_top"><img width="80" height="15" border=0 '
+      hsi += 'src="https://logv17.xiti.com/oco.xiti?s=65164'
+      hsi += '&p=&hl=' + hsh.getHours() + 'x' + hsh.getMinutes() + 'x' + hsh.getSeconds();
+      if(parseFloat(navigator.appVersion)>=4)
+            {Xiti_s=screen;hsi += '&r=' + Xiti_s.width + 'x' + Xiti_s.height + 'x' + Xiti_s.pixelDepth + 'x' + Xiti_s.colorDepth;}
+      hsd.writeln(hsi + '&ref=' + hsd.referrer.replace('&', '$') + ' " title="Mesurez votre audience"></a>');//-->  
+      </script><a href="https://www.xiti.com/xiti.asp?s=65164" target="_top"><img width="80" height="15" border="0" src="./Méthode du pivot de Gauss_files/oco.xiti" title="Mesurez votre audience"></a>
+</span><span class="item"><a href="https://www.bibmath.net/contact.php">Signaler une erreur/Nous contacter</a></span><span class="item"><a href="https://www.bibmath.net/credits.php">Mentions Légales</a></span><span class="item"><a class="change-consent" onclick="window.__tcfapi(&#39;displayConsentUi&#39;, 2, function() {} );">Confidentialité</a></span></section></div></footer><footer id="piedmobile"><span class="item"><script language="JavaScript1.1"> <!-- 
+	hsh = new Date();
+      hsd = document;
+      hsi = '<a href="https://www.xiti.com/xiti.asp?s=65164"'
+      hsi += ' TARGET="_top"><img width="80" height="15" border=0 '
+      hsi += 'src="https://logv17.xiti.com/oco.xiti?s=65164'
+      hsi += '&p=&hl=' + hsh.getHours() + 'x' + hsh.getMinutes() + 'x' + hsh.getSeconds();
+      if(parseFloat(navigator.appVersion)>=4)
+            {Xiti_s=screen;hsi += '&r=' + Xiti_s.width + 'x' + Xiti_s.height + 'x' + Xiti_s.pixelDepth + 'x' + Xiti_s.colorDepth;}
+      hsd.writeln(hsi + '&ref=' + hsd.referrer.replace('&', '$') + ' " title="Mesurez votre audience"></a>');//-->  
+      </script><a href="https://www.xiti.com/xiti.asp?s=65164" target="_top"><img width="80" height="15" border="0" src="./Méthode du pivot de Gauss_files/oco.xiti" title="Mesurez votre audience"></a>
+</span><span class="item"><a href="https://www.bibmath.net/contact.php?origine=mobile">Contact</a></span><span class="item"><a class="change-consent" onclick="window.__tcfapi(&#39;displayConsentUi&#39;, 2, function() {} );">Confidentialité</a><span class="item"><a href="https://www.bibmath.net/credits.php">Mentions légales</a></span></span></footer>
+<script>
+var acc = document.getElementsByClassName("titrecours");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    /* Toggle between adding and removing the "active" class,
+    to highlight the button that controls the panel */
+    this.classList.toggle("activecours");
+
+    /* Toggle between hiding and showing the active panel */
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</script>
+
+<script type="text/javascript" src="./Méthode du pivot de Gauss_files/scrolling.js"></script></body><iframe id="google_esf" name="google_esf" src="./Méthode du pivot de Gauss_files/zrt_lookup.html" style="display: none;"></iframe></html>

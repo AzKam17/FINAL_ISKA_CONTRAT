@@ -1,0 +1,12 @@
+<a href="{{ path('apps_process_home_perms', {processObj: processObj, perms: 'all_user_juridique'}) }}">
+    <button type="button" class="btn btn-primary btn-flat {{ status == 'all_user_juridique' ? 'disabled' : '' }}">Toutes les demandes</button>
+</a>
+<a href="{{ path('apps_process_home_perms', {processObj: processObj, perms: 'new_user_juridique'}) }}">
+    <button type="button" class="btn btn-primary btn-flat" {{ status == 'new_user_juridique' ? 'disabled' : '' }}>En attente de traitement</button>
+</a>
+<a href="{{ path('apps_process_home_perms', {processObj: processObj, perms: 'rejetees_user_juridique'}) }}">
+    <button type="button" class="btn btn-primary btn-flat" {{ status == 'rejetees_user_juridique' ? 'disabled' : '' }}>Rejetées</button>
+</a>
+<a href="{{ path('apps_process_home_perms', {processObj: processObj, perms: 'validees_user_juridique'}) }}">
+    <button type="button" class="btn btn-primary btn-flat" {{ status == 'validees_user_juridique' ? 'disabled' : '' }}>Finalisés</button>
+</a>

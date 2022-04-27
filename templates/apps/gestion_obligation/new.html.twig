@@ -1,0 +1,231 @@
+{% extends 'apps/base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <meta name="turbo-visit-control" content="reload">
+    <link rel="stylesheet" href="{{ asset('plugins/select2/css/select2.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('plugins/select2/js/select2.full.min.js') }}" defer></script>
+    {{ encore_entry_script_tags('gestion_obligation_new') }}
+{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col">
+            <div class="card card-primary">
+                <div class="card-header">
+                    <div class="card-title">
+                        Créer une nouvelle obligation
+                    </div>
+                </div>
+                <div class="card-body">
+                    {{ form_start(form) }}
+                    <div class="row mt-2">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="">{{ form_label(form.sourceList) }}</label>
+                                {{ form_widget(form.sourceList) }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="">{{ form_label(form.sourceDisposition) }}</label>
+                                {{ form_widget(form.sourceDisposition) }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-1">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="">{{ form_label(form.referenceListe) }}</label>
+                                {{ form_widget(form.referenceListe) }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-1">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="">{{ form_label(form.reference) }}</label>
+                                {{ form_widget(form.reference) }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-1">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="">{{ form_label(form.pointsAbordes) }}</label>
+                                {{ form_widget(form.pointsAbordes) }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-1">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="">{{ form_label(form.obligation) }}</label>
+                                {{ form_widget(form.obligation) }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-1">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="">{{ form_label(form.statut) }}</label>
+                                {{ form_widget(form.statut) }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-1">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="">{{ form_label(form.sanctions) }}</label>
+                                {{ form_widget(form.sanctions) }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-1">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="">{{ form_label(form.impact) }}</label>
+                                {{ form_widget(form.impact) }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-1">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="">{{ form_label(form.importanceObligation) }}</label>
+                                {{ form_widget(form.importanceObligation) }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-1">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="">{{ form_label(form.fichier) }}</label>
+                                {{ form_widget(form.fichier) }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="posBtn" class="col">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Preuves</h3>
+                                </div>
+                                <div class="card-body">
+                                    <div id="accordion" class="preuves_accordion" data-prototype="{{ form_widget(form.preuves.vars.prototype)|e('html_attr') }}">
+                                        {% for p in form.preuves %}
+                                        <div class="card card-primary card_preuves">
+                                            <div class="card-header">
+                                                <h4 class="card-title w-100">
+                                                    <a class="d-block w-100" data-toggle="collapse" href="#collapse_preuves_{{ loop.index }}">
+                                                        Preuve #{{ loop.index }}
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapse_preuves_{{ loop.index }}" class="collapse{{ loop.first ? ' show' : '' }}" data-parent="#accordion">
+                                                <div class="card-body">
+                                                    <div class="row mt-1">
+                                                        <div class="col">
+                                                            <div class="form-group">
+                                                                <label for="">{{ form_label(p.intitule) }}</label>
+                                                                {{ form_widget(p.intitule) }}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mt-1">
+                                                        <div class="col">
+                                                            <div class="form-group">
+                                                                <label for="">{{ form_label(p.fichiers) }}</label>
+                                                                {{ form_widget(p.fichiers) }}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card">
+                                                        <div class="card-header">
+                                                            <div class="card-title">Actions</div>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <div id="accordion_{{ loop.index }}" data-preuve="{{ loop.index }}" data-prototype="{{ form_widget(p.actions.vars.prototype)|e('html_attr') }}">
+                                                                {% set p_index = loop.index %}
+                                                                {% for a in p.actions %}
+                                                                    <div class="card card-default">
+                                                                        <div class="card-header">
+                                                                            <h4 class="card-title w-100">
+                                                                                <a class="d-block w-100" data-toggle="collapse" href="#collapseOne_{{ p_index }}_{{ loop.index }}_id">
+                                                                                    Preuve {{ p_index }} - Action #{{ loop.index }}
+                                                                                </a>
+                                                                            </h4>
+                                                                        </div>
+                                                                        <div id="collapseOne_{{ p_index }}_{{ loop.index }}_id" class="collapse" data-parent="#accordion_{{ p_index }}">
+                                                                            <div class="card-body">
+                                                                                <div class="row mt-1">
+                                                                                    <div class="col">
+                                                                                        <div class="form-group">
+                                                                                            <label for="">{{ form_label(a.action) }}</label>
+                                                                                            {{ form_widget(a.action) }}
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="row mt-1">
+                                                                                    <div class="col">
+                                                                                        <div class="form-group">
+                                                                                            <label for="">{{ form_label(a.resultatAttendu) }}</label>
+                                                                                            {{ form_widget(a.resultatAttendu) }}
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="row mt-1">
+                                                                                    <div class="col">
+                                                                                        <div class="form-group">
+                                                                                            <label for="">{{ form_label(a.porteur) }}</label>
+                                                                                            {{ form_widget(a.porteur) }}
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="row mt-1">
+                                                                                    <div class="col">
+                                                                                        <div class="form-group">
+                                                                                            <label for="">{{ form_label(a.statutAction) }}</label>
+                                                                                            {{ form_widget(a.statutAction) }}
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="row mt-1">
+                                                                                    <div class="col">
+                                                                                        <div class="form-group">
+                                                                                            <label for="">{{ form_label(a.delai) }}</label>
+                                                                                            {{ form_widget(a.delai) }}
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                {% endfor %}
+                                                            </div>
+                                                            <button type="button" class="add_action_btn">Ajouter Action</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

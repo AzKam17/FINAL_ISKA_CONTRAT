@@ -1,0 +1,131 @@
+{% extends 'apps/base.html.twig' %}
+
+{% block page_title %}Accueil - Gestion Contentieux et litiges{% endblock %}
+{% block title %}Accueil - Gestion Contentieux et litiges{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset("plugins/datatables-bs4/css/dataTables.bootstrap4.min.css") }}">
+    <link rel="stylesheet" href="{{ asset('plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('plugins/datatables/jquery.dataTables.min.js') }}" defer></script>
+    <script src="{{ asset('plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}" defer></script>
+    <script src="{{ asset('plugins/datatables-responsive/js/dataTables.responsive.min.js') }}" defer></script>
+    <script src="{{ asset('plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}" defer></script>
+    <script src="{{ asset('plugins/datatables-buttons/js/dataTables.buttons.min.js') }}" defer></script>
+    <script src="{{ asset('plugins/datatables-buttons/js/buttons.bootstrap4.min.js') }}" defer></script>
+    <script src="{{ asset('plugins/jszip/jszip.min.js') }}" defer></script>
+    <script src="{{ asset('plugins/pdfmake/pdfmake.min.js') }}" defer></script>
+    <script src="{{ asset('plugins/pdfmake/vfs_fonts.js') }}" defer></script>
+    <script src="{{ asset('plugins/datatables-buttons/js/buttons.html5.min.js') }}" defer></script>
+    <script src="{{ asset('plugins/datatables-buttons/js/buttons.print.min.js') }}" defer></script>
+    <script src="{{ asset('plugins/datatables-buttons/js/buttons.colVis.min.js') }}" defer></script>
+{% endblock %}
+
+{% block body %}
+    {# Compte des statuts en base de données #}
+    <div class="row">
+        <div class="col-md-3 col-sm-6 col-12">
+            <div class="info-box bg-green">
+                <span class="info-box-icon bg-info"><i class="far fa-envelope"></i></span>
+                <div class="info-box-content">
+                    <span class="info-box-text">Litiges en cours</span>
+                    <span class="info-box-number">{{ nbrDemandeEnCoursDeValidation }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-12">
+            <div class="info-box bg-green">
+                <span class="info-box-icon bg-info"><i class="far fa-envelope"></i></span>
+                <div class="info-box-content">
+                    <a href="{{path('apps_litige_new')}}" target="_top">
+                    <span class="info-box-text text-white">Affaires contentieuses et litiges</span>
+                    <span class="info-box-number"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    {# Tableau avec les informations #}
+    <div class="row">
+        <div class="col">
+            {% for message in app.flashes('success') %}
+                <div class="callout callout-info">
+                    <h5>Résultat</h5>
+                    <p>{{ message }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Liste de tout les contentieux.</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <hr>
+                    <table id="example1" class="table table-bordered table-hover">
+                        <thead>
+                        <tr>
+                            <th>Identifiant</th>
+                            <th>Statut</th>
+                            <th>Nature</th>
+                            <th>Date du cas</th>
+                            <th>Nom des parties</th>
+                            <th>Juridiction</th>
+                            <th>Avocat</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for contrat in litiges %}
+                            <tr>
+                                <td>{{ contrat.id }}</td>
+                                <td><button class="btn btn-info">{{ contrat.isClosed ? 'Fermée' : 'En cours' }}</button></td>
+                                <td>{{ contrat.nature }}</td>
+                                <td>{{ contrat.dateCas | date('d/m/Y') }}</td>
+                                <td>{{ contrat.partieDemandeur ~ ' ' ~ contrat.partieDefendeur }}</td>
+                                <td>{{ contrat.juridiction }}</td>
+                                <td>{{ contrat.avocat }}</td>
+                                <td>
+                                    <a href="{{ path('apps_litige_show', {'id': contrat.id}) }}" target="_top">
+                                        <button class="btn btn-info">Consulter</button>
+                                    </a>
+                                    {% if not contrat.isClosed %}
+                                    <a href="{{ path('apps_litige_edit', {'id': contrat.id}) }}" target="_top">
+                                        <button class="btn btn-info">Modifier</button>
+                                    </a
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <th>Identifiant</th>
+                            <th>Statut</th>
+                            <th>Nature</th>
+                            <th>Date du cas</th>
+                            <th>Nom des parties</th>
+                            <th>Juridiction</th>
+                            <th>Avocat</th>
+                            <th>Actions</th>
+                        </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+
+        </div>
+        <!-- /.col -->
+    </div>
+{% endblock %}

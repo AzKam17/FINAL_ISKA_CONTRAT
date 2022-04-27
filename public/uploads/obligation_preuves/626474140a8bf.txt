@@ -1,0 +1,134 @@
+Authentification LDAP/Active Directory 
+
+OTP
+
+Messagerie
+
+ProcessMaker
+
+Gestion des contrats
+---------------------------------------------------------------------------
+Reporting et statistiques sur une période
+
+Users
+	Référents techniques Experts / DSI
+	Manager/SUperviseur/Administrateur
+	Utilisateur invité
+	Responsables/administrateurs
+
+Ergonomie simplifiée
+
+Importation de fichiers accompagnant la demande
+Importation de demande depuis une BD externe
+
+Faciliter la génération des contrats enregistrés
+
+Enregistrement et stockage des contrats validés et signés
+
+Notification liées aux modification de contrats (modification, approche de la date de fin)
+
+Stocker l'identifiant relatif à la demande
+
+Moteur de recherche des contrats
+
+Journal des évènements liés à un contrat
+
+Toujours stocker l'identifiant relatif à la demande
+
+---------------------------------------------------------------------------
+
+Gestion des affaires contentieuses et litiges
+
+Base de stockage pour l'ensemble des affaires contentieuses
+
+Stats comme nature de l'affaire, nombre de contentieux, montant des risques de condamnation
+
+Formulaire d'enregistrement des litiges basé sur des caracs simples
+
+Prise en compte des fichiers externes pour un litiges
+
+Base de recherche sur plusieurs critères
+
+Journal d'evènements
+
+---------------------------------------------------------------------------
+
+Gestion de la matrice des obligations
+
+chargement des fichiers lors de l’enregistrement du formulaire des obligations
+
+Intégrer une base de recherche sur plusieurs critères
+
+Journal d'evènements
+
+
+
+---------------------------------------------------------------------------
+
+Systeme de reporting
+
+Etat de toutes les informations renseignées dans le système sur une période donnée.
+
+Base des demandes de contrats et de consultations
+
+Base des contrats enregistrés (appliquer des filtre de recherche)
+
+Base des affaires contentieuses et litiges
+
+Base des obligations, preuves et plan d’actions
+
+
+---------------------------------------------------------------------------
+
+SYSTEME DES STATISTIQUES
+
+Nombre total d’obligations
+
+Nombre Total
+d’obligations, Nombre d’obligations NOK, Nombre d’obligations OK, Nombre
+d’obligation NA
+
+Nombre total des obligations des Autres textes légaux (Nombre Total
+d’obligations, Nombre d’obligations NOK, Nombre d’obligations OK, Nombre
+d’obligation NA.
+
+calcul du taux de conformité
+
+---------------------------------------------------------------------------
+
+SYSTEME D’ALERTE ET DE NOTIFICATION
+
+Alertes plan d’action : Lorsqu’une action est renseignée dans le calendrier du
+plan d’action, les porteurs identifiés recevront des mails à la date indiquée afin
+de justifier l’exécution de leur obligation.
+
+Alerte liée à l’échéance d’un contrat ;
+
+Alerte liée à la demande d’un contrat ;
+
+Alerte liée validation d’un contrat ;
+
+Alerte liée à la modification et au renouvellement d’un contrat.
+
+---------------------------------------------------------------------------
+
+SYSTEME DE DEMANDES D’AUTORISATION POUR LES OFFRES COMMERCIALE
+
+La solution doit permettre d’enregistrer  les demandes pour les offres commerciale et faire ressortir un rapport. 
+
+
+
+---------------------------------------------------------------------------
+
+SYSTEME DE PARAMÉTRAGES
+
+Le logiciel doit permettre une large autonomie de paramétrage des différentes
+fonctionnalités des bases et des interfaces
+
+Une interface de création et d’autorisation d’accès aux fonctionnalités doit être prise en charge
+
+L’outil doit permettre l’importation/exportation de données au format csv, Excel, PDF
+
+Intégrer une fonction de recherche sur tout type de document, le résultat de la recherche doit être un tableau
+
+L’administrateur doit pouvoir réaliser des indicateurs statistiques de fonctionnement et d’utilisation ;

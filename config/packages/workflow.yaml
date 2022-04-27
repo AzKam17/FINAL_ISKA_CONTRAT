@@ -1,0 +1,42 @@
+framework:
+    workflows:
+        gestion_process:
+            type: 'state_machine'
+            audit_trail:
+                enabled: true
+            marking_store:
+                type: 'method'
+                property: 'currentState'
+            supports:
+                - App\Entity\Abstracts\ProcessObj
+            initial_marking: en_attente_manager
+            places:
+                - en_attente_manager
+                - demande_rejetee_manager
+                - demande_acceptee_manager
+                - demande_non_attribuee
+                - demande_attribuee
+                - demande_validee
+                - demande_rejetee
+            transitions:
+                valider_avis:
+                    from: en_attente_manager
+                    to: demande_non_attribuee
+                valider_manager:
+                    from: en_attente_manager
+                    to: demande_acceptee_manager
+                refuser_manager:
+                    from: en_attente_manager
+                    to: demande_rejetee_manager
+                passer_en_non_attribuee:
+                    from: demande_acceptee_manager
+                    to: demande_non_attribuee
+                attribuer:
+                    from: demande_non_attribuee
+                    to: demande_attribuee
+                valider_demande:
+                    from: demande_attribuee
+                    to: demande_validee
+                refuser_demande:
+                    from: demande_attribuee
+                    to: demande_rejetee

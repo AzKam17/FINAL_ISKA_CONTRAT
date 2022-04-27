@@ -1,0 +1,15 @@
+<a href="{{ path('apps_process_home_perms', {processObj: processObj, perms: 'all_user'}) }}">
+    <button type="button" class="btn btn-primary btn-flat {{ status == 'all_user' ? 'disabled' : '' }}">Total demandes</button>
+</a>
+<a href="{{ path('apps_process_home_perms', {processObj: processObj, perms: 'en_attente_user_manager'}) }}">
+    <button type="button" class="btn btn-primary btn-flat" {{ status == 'en_attente_user_manager' ? 'disabled' : '' }}>Attente de validation</button>
+</a>
+{#<a href="{{ path('app_gestion_contrat_main_index_opt', {processObj: processObj, perms: 'en_attente_user_service_juridique'}) }}">
+    <button type="button" class="btn btn-primary btn-flat" {{ status == 'en_attente_user_service_juridique' ? 'disabled' : '' }}>En attente de traitement par le service juridique</button>
+</a>#}
+<a href="{{ path('apps_process_home_perms', {processObj: processObj, perms: 'rejetees_user'}) }}">
+    <button type="button" class="btn btn-primary btn-flat" {{ status == 'rejetees_user' ? 'disabled' : '' }}>Rejetées</button>
+</a>
+<a href="{{ path('apps_process_home_perms', {processObj: processObj, perms: 'finalises_user'}) }}">
+    <button type="button" class="btn btn-primary btn-flat" {{ status == 'finalises_user' ? 'disabled' : '' }}>Contrats finalisés</button>
+</a>

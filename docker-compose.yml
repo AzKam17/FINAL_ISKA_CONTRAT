@@ -1,0 +1,87 @@
+services:
+
+  mariadb:
+    image: mariadb:10.5
+    container_name: iska_maria
+    restart: always
+    #ports:
+    #  - 3306:3306
+    volumes:
+      - ./docker/database:/var/lib/mysql
+    environment:
+      MARIADB_ROOT_PASSWORD: qwerty
+    networks:
+      - iska_database
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: iska_phpmyadmin
+    restart: always
+    ports:
+      - 9927:80
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=mariadb
+    depends_on:
+      - mariadb
+    networks:
+      - iska_database
+
+  maildev:
+    image: maildev/maildev
+    container_name: iska_maildev
+    command: bin/maildev --web 80 --smtp 25 --hide-extensions STARTTLS
+    ports:
+      - "9928:80"
+    #  - "9905:25"
+    restart: always
+    depends_on:
+      - www
+    networks:
+      - iska_mails
+
+  redis:
+    image: redis
+    container_name: iska_redis
+    #ports:
+    #  - 9980:6379
+    networks:
+      - iska_network
+
+  redis-commander:
+    image: rediscommander/redis-commander:latest
+    container_name: iska_redis_commander
+    restart: always
+    ports:
+      - "9930:8081"
+    environment:
+      - REDIS_HOSTS=redis
+      - REDIS_PORT=6739
+    depends_on:
+      - redis
+    networks:
+      - iska_network
+
+  www:
+    build: ubuntu
+    container_name: iska_symfony
+    ports:
+      - "9929:8000"
+    volumes:
+      - ./:/iska
+    restart: always
+    depends_on:
+      - phpmyadmin
+    networks:
+      - iska_network
+      - iska_mails
+      - iska_database
+
+
+
+networks:
+  iska_network:
+  iska_mails:
+  iska_database:
+
+

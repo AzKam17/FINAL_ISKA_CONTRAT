@@ -1,0 +1,43 @@
+<div class="card-body">
+    <h4 class="mt-3">Demande d'avis / conseil</h4>
+    <hr>
+    <div class="row mt-2">
+        <div class="col">
+            <div class="form-group">
+                <label for="">{{ form_label(form.objet) }}</label>
+                {{ form_widget(form.objet) }}
+            </div>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col">
+            <div class="form-group">
+                <label for="">{{ form_label(form.niveauExecution) }}</label>
+                {{ form_widget(form.niveauExecution) }}
+            </div>
+        </div>
+    </div>
+    <div class="row mt-1">
+        <div class="col">
+            <div class="form-group">
+                <label for="">{{ form_label(form.renseignement) }}</label>
+                {{ form_widget(form.renseignement) }}
+            </div>
+        </div>
+    </div>
+    <div class="row mt-1">
+        <div class="col">
+            <div class="form-group">
+                <label for="">{{ form_label(form.documents) }}</label>
+                {{ form_widget(form.documents) }}
+            </div>
+        </div>
+    </div>
+    <div class="row mt-1">
+        <div class="col">
+            <div class="form-group">
+                <button class="btn btn-sm btn-info">{{ button_label|default('Effectuer la demande') }}</button>
+            </div>
+        </div>
+    </div>
+</div>

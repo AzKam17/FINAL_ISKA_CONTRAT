@@ -1,0 +1,36 @@
+{% extends 'apps/base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <meta name="turbo-visit-control" content="reload">
+    <link rel="stylesheet" href="{{ asset("plugins/datatables-bs4/css/dataTables.bootstrap4.min.css") }}">
+    <link rel="stylesheet" href="{{ asset('plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('plugins/summernote/summernote-bs4.min.js') }}" defer></script>
+{% endblock %}
+
+{% block title %}Modifier le litige {{ litige.id }}{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col">
+            <div class="card card-primary">
+                <div class="card-header">
+                    <div class="card-title">
+                        Modifier le litige {{ litige.id }}
+                    </div>
+                </div>
+                <div class="card-body">
+                    {{ include('apps/gestion_litiges/_form_edit.html.twig') }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

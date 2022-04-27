@@ -1,0 +1,40 @@
+{% extends 'apps/base.html.twig' %}
+
+{% set title = processObj ~ '_new_title' %}
+
+{% block title %}
+    {{ title | processObjFilter }}
+{% endblock %}
+
+{% block page_title %}
+    {{ title | processObjFilter }}
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <meta name="turbo-visit-control" content="reload">
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col">
+            <div class="card card-primary">
+                <div class="card-header">
+                    <div class="card-title">{{ (processObj ~ '_new_block_title') | processObjFilter }}</div>
+                </div>
+                <div class="card-body">
+                    {{ form_start(form) }}
+                    <div class="card-body">
+                        <h4 class="mt-3">{{ title | processObjFilter }}</h4>
+                        {{ include('apps/gestion_process/_partials/forms/new/' ~ processObj ~ '.html.twig', {'button_label': 'Effectuer la demande'}) }}
+                    </div>
+                </div>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

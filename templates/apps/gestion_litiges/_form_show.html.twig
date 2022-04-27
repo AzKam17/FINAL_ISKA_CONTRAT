@@ -1,0 +1,132 @@
+{{ form_start(form) }}
+    <div class="card-body">
+    <h4 class="mt-3">Identification du litige</h4>
+    <hr>
+    <div class="row mt-2">
+        <div class="col">
+            <div class="form-group">
+                <label for="">{{ form_label(form.origineCas) }}</label>
+                {{ form_widget(form.origineCas) }}
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label for="">{{ form_label(form.dateCas) }}</label>
+                {{ form_widget(form.dateCas) }}
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label for="">{{ form_label(form.juridiction) }}</label>
+                {{ form_widget(form.juridiction) }}
+            </div>
+        </div>
+    </div>
+    <div class="row mt-1">
+        <div class="col">
+            <div class="form-group">
+                <label for="">{{ form_label(form.nature) }}</label>
+                {{ form_widget(form.nature) }}
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label for="">{{ form_label(form.avocat) }}</label>
+                {{ form_widget(form.avocat) }}
+            </div>
+        </div>
+    </div>
+        <div class="row mt-1">
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="">{{ form_label(form.partieDemandeur) }}</label>
+                    {{ form_widget(form.partieDemandeur) }}
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="">{{ form_label(form.partieDefendeur) }}</label>
+                    {{ form_widget(form.partieDefendeur) }}
+                </div>
+            </div>
+        </div>
+    <div class="row mt-1">
+        <div class="col">
+            <div class="form-group">
+                <label for="">{{ form_label(form.fait) }}</label>
+                {{ form_widget(form.fait) }}
+            </div>
+        </div>
+    </div>
+    <div class="row mt-1">
+        <div class="col">
+            <div class="form-group">
+                <label for="">{{ form_label(form.avisJuridique) }}</label>
+                {{ form_widget(form.avisJuridique) }}
+            </div>
+        </div>
+    </div>
+    <div class="row mt-1">
+        <div class="col-4">
+            <div class="form-group">
+                <label for="">{{ form_label(form.estimationFinanciere) }}</label>
+                {{ form_widget(form.estimationFinanciere) }}
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="form-group">
+                <label for="">{{ form_label(form.estimationConsequencesFinancieresProfit) }}</label>
+                {{ form_widget(form.estimationConsequencesFinancieresProfit) }}
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="form-group">
+                <label for="">{{ form_label(form.provision) }}</label>
+                {{ form_widget(form.provision) }}
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-1">
+            <div class="col">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Procédure</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body p-0">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th style="width: 100px">#</th>
+                                <th>Procédure</th>
+                                <th>Créé par</th>
+                                <th>Date</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for p in litige.procedures  %}
+                                <tr>
+                                    <td>Etape {{ loop.index }}</td>
+                                    <td>{{ p.value }}</td>
+                                    <td>{{ p.createdBy.user.displayName }}</td>
+                                    <td>{{ p.createdAt | date('d-m-Y') }}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+            </div>
+        </div>
+    <div class="row mt-1" style="display: none">
+        <div class="col">
+            <div class="form-group">
+                <label for="">{{ form_label(form.procedure) }}</label>
+                {{ form_widget(form.procedure) }}
+            </div>
+        </div>
+    </div>
+</div>
+{{ form_end(form) }}

@@ -1,0 +1,15 @@
+.btn:hover{
+    background-color: green;
+    border-color: green;
+}
+.nav-item:hover{
+    border-bottom: solid 2px green;
+}
+.nav-item .dropdown-item:hover{
+    border-bottom: solid 2px green;
+}
+
+#main_div {
+    background-image: url("../img/back.png");
+    background-size: cover;
+}

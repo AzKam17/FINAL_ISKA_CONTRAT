@@ -1,0 +1,38 @@
+<div class="row">
+    <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box bg-green">
+            <span class="info-box-icon bg-info"><i class="far fa-envelope"></i></span>
+            <div class="info-box-content">
+                <span class="info-box-text">Demandes du service</span>
+                <span class="info-box-number">{{ counts['all'] }}</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box bg-green">
+            <span class="info-box-icon bg-info"><i class="far fa-envelope"></i></span>
+            <div class="info-box-content">
+                <span class="info-box-text">Demandes en attentes</span>
+                <span class="info-box-number">{{ counts['en_attente'] }}</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box bg-green">
+            <span class="info-box-icon bg-info"><i class="far fa-envelope"></i></span>
+            <div class="info-box-content">
+                <span class="info-box-text">Demandes validées</span>
+                <span class="info-box-number">{{ counts['validees'] }}</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box bg-green">
+            <span class="info-box-icon bg-info"><i class="far fa-envelope"></i></span>
+            <div class="info-box-content">
+                <span class="info-box-text">Demandes rejetées</span>
+                <span class="info-box-number">{{ counts['rejetees'] }}</span>
+            </div>
+        </div>
+    </div>
+</div>

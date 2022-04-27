@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% block meta_tags %}{% endblock %}
+    <title>{% block page_title %}{% endblock %} | ISKA CONTRAT</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('base_template_js') }}
+        <link rel="stylesheet" href="{{ asset("plugins/fontawesome-free/css/all.min.css") }}">
+        <link rel="stylesheet" href="{{ asset("dist/css/adminlte.min.css") }}">
+        <link
+                rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        />
+    {% endblock %}
+
+    {% block javascripts %}
+        {{ encore_entry_script_tags('base_template_js') }}
+        <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}" defer></script>
+        <script src="{{ asset('dist/js/adminlte.min.js') }}" defer></script>
+        <script src="{{ asset('dist/js/demo.js') }}" defer></script>
+    {% endblock %}
+</head>
+<body  class="hold-transition layout-top-nav">
+<div class="wrapper">
+    <div class="preloader flex-column justify-content-center align-items-center">
+        <img class="" src="{{ asset("img/logo.png") }}" alt="DLGCO Logo" height="300" width="auto">
+    </div>
+    {{ include("apps/_partials/_header.html.twig") }}
+    <div id="main_div" class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6 animate__animated animate__fadeInLeft">
+                        <h1 class="text-white">{% block title %}{% endblock %}</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right ">
+                            {% block breadcrumb %}{% endblock %}
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="content">
+            <div class="container-fluid">
+                {% block body %}{% endblock %}
+            </div>
+        </section>
+    </div>
+    <footer class="main-footer">
+        <div class="float-right d-none d-sm-block">
+            <b>Version</b> 1.0.0
+        </div>
+        <strong>Copyright &copy; {{ "now" | date('Y') }} <a href="#">DLG&CO</a>.</strong> All rights reserved.
+    </footer>
+    <aside class="control-sidebar control-sidebar-dark">
+    </aside>
+</div>
+</body>
+</html>

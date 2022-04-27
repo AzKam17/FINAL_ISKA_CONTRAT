@@ -1,0 +1,20 @@
+
+<a href="{{ path('apps_process_home_perms', {processObj: processObj, perms: 'all'}) }}">
+    <button type="button" class="btn btn-primary btn-flat" {{ status == 'all' ? 'disabled' : '' }}>Total demandes *</button>
+</a>
+{#
+<a href="{{ path('app_gestion_contrat_main_index_opt', {processObj: processObj, perms: 'boss_juridique_attente_manager'}) }}">
+    <button type="button" class="btn btn-primary btn-flat" {{ status == 'boss_juridique_attente_manager' ? 'disabled' : '' }}>Demandes en attente du manager</button>
+</a>#}
+<a href="{{ path('apps_process_home_perms', {processObj: processObj, perms: 'boss_juridique_attente_attribution'}) }}">
+    <button type="button" class="btn btn-primary btn-flat" {{ status == 'boss_juridique_attente_attribution' ? 'disabled' : '' }}>En attente d'attribution</button>
+</a>
+<a href="{{ path('apps_process_home_perms', {processObj: processObj, perms: 'boss_juridique_attente_traitement'}) }}">
+    <button type="button" class="btn btn-primary btn-flat" {{ status == 'boss_juridique_attente_traitement' ? 'disabled' : '' }}>Attente de traitement</button>
+</a>
+<a href="{{ path('apps_process_home_perms', {processObj: processObj, perms: 'boss_juridique_attente_validee'}) }}">
+    <button type="button" class="btn btn-primary btn-flat"{{ status == 'boss_juridique_attente_validee' ? 'disabled' : '' }}>Validées</button>
+</a>
+<a href="{{ path('apps_process_home_perms', {processObj: processObj, perms: 'boss_juridique_attente_rejetee'}) }}">
+    <button type="button" class="btn btn-primary btn-flat"{{ status == 'boss_juridique_attente_rejetee' ? 'disabled' : '' }}>Rejetées</button></a>
+

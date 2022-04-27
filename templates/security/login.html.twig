@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ preload('/css/login.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+<div class="main_div animate__animated animate__fadeInDown">
+    <div class="title">ISKA CONTRAT</div>
+    <div class="trait_dessus">
+        <hr>
+    </div>
+    <div class="title">LOGIN</div>
+    <form method="post">
+        <div class="input_box">
+            <input type="text" placeholder="Email" name="email" value="{{ last_username }}" required>
+            <div class="icon"><i class="fas fa-user"></i></div>
+        </div>
+        <div class="input_box">
+            <input type="password" placeholder="Password" name="password" required>
+            <div class="icon"><i class="fas fa-lock"></i></div>
+        </div>
+        <input type="hidden" name="_csrf_token"
+               value="{{ csrf_token('authenticate') }}"
+        >
+        <div class="input_box button">
+            <input type="submit" value="Login">
+        </div>
+    </form>
+</div>
+</body>
+</html>

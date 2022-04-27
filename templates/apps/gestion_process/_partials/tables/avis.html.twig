@@ -1,0 +1,66 @@
+
+<div class="row animate__animated animate__fadeInUp">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Liste de tout {{ is_granted('ROLE_JURIDIQUE') ? 'les' : 'mes' }} demandes d'avis &amp; de conseils.</h3>
+                {% if not is_granted('ROLE_JURIDIQUE') %}
+                <a href="#">
+                    <button type="button" class="btn btn-primary btn-flat float-right">Créer {{ is_granted('ROLE_JURIDIQUE') ? 'un avis' : 'une demande d\'avis &amp; de conseils' }}.</button>
+                </a>
+                {% endif %}
+            </div>
+            <div class="card-body">
+                {{ render(path('_partials_filters_process', {obj: obj, status: status, perms: perms})) }}
+                <hr>
+                <table id="example1" class="table table-bordered table-hover">
+                    <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Initiateur</th>
+                        <th>Objet</th>
+                        <th>Renseignement</th>
+                        <th>Niveau d'exécution</th>
+                        <th>Statut</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for avi in avis %}
+                        <tr>
+                            <td>{{ avi.id }}</td>
+                            <td>{{ avi.agentInitiateur.concatenateNames }}</td>
+                            <td>{{ avi.objet }}</td>
+                            <td>{{ avi.rensignement | striptags| u.truncate(25, true, '...')|raw|nl2br }}</td>
+                            <td>{{ avi.niveauExecution }}</td>
+                            <td>{{ avi.currentState | statutContrat }}</td>
+                            <td>
+                                <a target="_top" href="{{ path('app_gestion_avis_conseils_avis_show', {'id': avi.id}) }}">Consulter</a>
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td colspan="5">no records found</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <th>Id</th>
+                        <th>Initiateur</th>
+                        <th>Objet</th>
+                        <th>Renseignement</th>
+                        <th>Niveau d'exécution</th>
+                        <th>Statut</th>
+                        <th>Actions</th>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+
+    </div>
+    <!-- /.col -->
+</div>

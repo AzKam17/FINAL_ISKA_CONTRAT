@@ -1,0 +1,53 @@
+<nav class="main-header navbar navbar-expand-md navbar-light navbar-dark">
+    <div class="container">
+        <a href="#" class="navbar-brand">
+            <img src="{{ asset('dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+            <span class="brand-text font-weight-light">ISKA-CONTRAT</span>
+        </a>
+
+        <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse order-3" id="navbarCollapse">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Gestion Contractuelle</a>
+                    <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
+                        <li><a href="#" class="dropdown-item">Dashboard </a></li>
+                        <li><a href="#" class="dropdown-item">{{ is_granted('ROLE_JURIDIQUE') ? 'Nouveau contrat' : 'Nouvelle demande de contrat' }}</a></li>
+                        <li><a href="#" class="dropdown-item">Contrat</a></li>
+                    </ul>
+                </li>
+
+                {% if is_granted("ROLE_JURIDIQUE") %}
+                <li class="nav-item dropdown" id="azkam">
+                    <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Base documentaire</a>
+                    <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
+                        <li><a href="#" class="dropdown-item">Type de contrat </a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="{{path('apps_home_litige')}}" class="nav-link">Litiges</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{path('apps_obligation_home')}}" class="nav-link">Conformité règlementaire</a>
+                </li>
+                {% endif %}
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Autorisations</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ path('apps_process_home', {processObj: 'avis'} )}}" class="nav-link">Avis & Conseils</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ path('app_logout') }}" class="nav-link">Déconnexion</a>
+                </li>
+            </ul>
+
+
+        </div>
+    </div>
+</nav>

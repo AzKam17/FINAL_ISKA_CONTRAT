@@ -1,0 +1,30 @@
+{% extends 'apps/base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <meta name="turbo-visit-control" content="reload">
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}
+
+{% block title %}Enregistrer un nouveau litige{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col">
+            <div class="card card-primary">
+                <div class="card-header">
+                    <div class="card-title">
+                        Enregistrer un nouveau litige
+                    </div>
+                </div>
+                <div class="card-body">
+                    {{ include('apps/gestion_litiges/_form_new.html.twig') }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
